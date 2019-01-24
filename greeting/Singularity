@@ -1,0 +1,10 @@
+Bootstrap: docker
+From: ubuntu:16.04
+
+# sudo singularity build greeting.sif Singularity
+
+%post
+
+    # Write an echo statement to the second and third line of the shell action
+    sed -i '2iecho Hello, ${USER}!;' /.singularity.d/actions/shell
+    sed -i '3iecho;' /.singularity.d/actions/shell
