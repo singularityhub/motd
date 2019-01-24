@@ -1,6 +1,6 @@
 # Asciiart Message
 
-[Figlet]() is a terminal application for quickly creating asciinema text.
+[Figlet](http://manpages.ubuntu.com/manpages/bionic/man6/figlet-figlet.6.html) is a terminal application for quickly creating asciinema text.
 
 Here is how we would greet our users with some ascii-ized letters:
 
