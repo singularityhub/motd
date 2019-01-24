@@ -2,6 +2,8 @@
 
 for Singularity containers
 
+[![asciicast](https://asciinema.org/a/223333.svg)](https://asciinema.org/a/223333?speed=2)
+
 ## What is a message of the day?
 
 If you've ever logged into a linux cluster, or played a computer 
