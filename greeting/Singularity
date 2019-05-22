@@ -6,5 +6,10 @@ From: ubuntu:16.04
 %post
 
     # Write an echo statement to the second and third line of the shell action
-    sed -i '2iecho Hello, ${USER}!;' /.singularity.d/actions/shell
-    sed -i '3iecho;' /.singularity.d/actions/shell
+    cat > /.singularity.d/env/99-motd.sh <<EOF
+case \$0 in
+    /.singularity.d/actions/shell)
+        echo "Hello \$USER!"
+        echo ;;
+esac
+EOF

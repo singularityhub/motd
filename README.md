@@ -4,6 +4,11 @@ for Singularity containers
 
 [![asciicast](https://asciinema.org/a/223333.svg)](https://asciinema.org/a/223333?speed=2)
 
+Note that these were modified for Singularity 3.x due to a [loss of functionality](https://github.com/singularityhub/motd/issues/2) 
+to customize the actions shell file. If you are looking for the original recipes for 2.x containers,
+see [release/2.x](https://github.com/singularityhub/motd/tree/release/2.x). The current
+master should work on both.
+
 ## What is a message of the day?
 
 If you've ever logged into a linux cluster, or played a computer 
@@ -32,6 +37,7 @@ script that is executed **only** on a shell.
 In this repository, we will provide you with a few fun examples for generating
 messages of the day in Singularity containers.
 
+ - [general](general): will show you how to customize a message for shell, exec, run, or test.
  - [greeting](greeting): a simple message of the day to greet the user
  - [fortune](fortune): give the user a fortune instead, add a cow, and some color!
  - [help](help): show the container's %help section to the user when they shell inside

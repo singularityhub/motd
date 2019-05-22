@@ -7,5 +7,11 @@ From: ubuntu:16.04
 
     # Install lolcat, cowsay, fortune
     apt-get update && apt-get install -y fortune cowsay lolcat
-    sed -i '2iexport LC_ALL=C;' /.singularity.d/actions/shell
-    sed -i '3i/usr/games/fortune | /usr/games/cowsay | /usr/games/lolcat;' /.singularity.d/actions/shell
+
+    cat > /.singularity.d/env/99-motd.sh <<EOF
+case \$0 in
+    /.singularity.d/actions/shell)
+        export LC_ALL=C
+        /usr/games/fortune | /usr/games/cowsay | /usr/games/lolcat;;
+esac
+EOF

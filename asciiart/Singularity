@@ -9,5 +9,10 @@ From: ubuntu:16.04
     apt-get update && apt-get install -y figlet
 
     # Write a figlet command, see fonts available in README
-    sed -i '2ifiglet ${USER}!;' /.singularity.d/actions/shell
-    sed -i '3iecho fwoop! ...you are in a container...;' /.singularity.d/actions/shell
+    cat > /.singularity.d/env/99-motd.sh <<EOF
+case \$0 in
+    /.singularity.d/actions/shell)
+        figlet "\${USER}!"
+        echo "fwoop! ...you are in a container...";;
+esac
+EOF

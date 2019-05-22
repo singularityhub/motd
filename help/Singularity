@@ -17,4 +17,9 @@ Here is how to execute a custom command
 %post
 
     # cat the help file that is generated via the %help section
-    sed -i '2icat /.singularity.d/runscript.help;' /.singularity.d/actions/shell
+    cat > /.singularity.d/env/99-motd.sh <<EOF
+case \$0 in
+    /.singularity.d/actions/shell)
+        cat /.singularity.d/runscript.help;;
+esac
+EOF
