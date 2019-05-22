@@ -19,6 +19,10 @@ From: golang:1.11.5-stretch
     # Get your image from somewhere (can also be via %files)
     wget -O /avocado.png https://vsoch.github.io/datasets/assets/img/avocado.png
 
-    # run gotermimg with the avocado image
-    sed -i '2i/usr/bin/gotermimg /avocado.png' /.singularity.d/actions/shell
-    sed -i '3iecho Have you had an avocado today?' /.singularity.d/actions/shell
+    cat > /.singularity.d/env/99-motd.sh <<EOF
+case \$0 in
+    /.singularity.d/actions/shell)
+        /usr/bin/gotermimg /avocado.png
+        echo Have you had an avocado today?;;
+esac
+EOF

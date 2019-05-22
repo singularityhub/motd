@@ -32,6 +32,7 @@ script that is executed **only** on a shell.
 In this repository, we will provide you with a few fun examples for generating
 messages of the day in Singularity containers.
 
+ - [general](general): will show you how to customize a message for shell, exec, run, or test.
  - [greeting](greeting): a simple message of the day to greet the user
  - [fortune](fortune): give the user a fortune instead, add a cow, and some color!
  - [help](help): show the container's %help section to the user when they shell inside

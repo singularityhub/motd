@@ -4,6 +4,22 @@ Here is how you can add a simple greeting to your Singularity containers!
 The recipe also demonstrates using an environment variable to reference
 the user by name:
 
+## Singularity 3.0+
+
+```bash
+%post
+    # Write an echo statement to the second and third line of the shell action
+    cat > /.singularity.d/env/99-motd.sh <<EOF
+case \$0 in
+    /.singularity.d/actions/shell)
+        echo "Hello \$USER!"
+        echo ;;
+esac
+EOF
+```
+
+## Singularity Under 3.0
+
 **One Line Greeting**
 
 ```bash

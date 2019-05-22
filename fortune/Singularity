@@ -5,8 +5,12 @@ From: ubuntu:16.04
 
 %post
 
-    # Install figlet!
+    # Install fortune
     apt-get update && apt-get install -y fortune
 
-    sed -i '2i/usr/games/fortune;' /.singularity.d/actions/shell
-
+    cat > /.singularity.d/env/99-motd.sh <<EOF
+case \$0 in
+    /.singularity.d/actions/shell)
+        /usr/games/fortune;;
+esac
+EOF
