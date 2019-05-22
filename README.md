@@ -4,6 +4,11 @@ for Singularity containers
 
 [![asciicast](https://asciinema.org/a/223333.svg)](https://asciinema.org/a/223333?speed=2)
 
+Note that these were modified for Singularity 3.x due to a [loss of functionality](https://github.com/singularityhub/motd/issues/2) 
+to customize the actions shell file. If you are looking for the original recipes for 2.x containers,
+see [release/2.x](https://github.com/singularityhub/motd/tree/release/2.x). The current
+master should work on both.
+
 ## What is a message of the day?
 
 If you've ever logged into a linux cluster, or played a computer 
